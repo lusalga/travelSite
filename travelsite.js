@@ -15,6 +15,9 @@ const handlebars = require('express-handlebars')
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
+// static middleware designates one or more directions containing static resources
+app.use(express.static(__dirname + '/public'));
+
 // app.set(name, value) method in express
 app.set('port', process.env.PORT || 3000);
 
