@@ -1,44 +1,58 @@
-// After installing Express by npm, we need to tell the application
-// we require express.
+// After installing Express by npm,
+// we load the express module
 const express = require('express');  
 
-// Creating the app object, our express application, by calling top-level 
-// express() function.
+// create the app object, our Express application, by calling top-level 
+// express() function
 const app = express();
 
-// set up handlebars view engine (template framework)
-const handlebars = require('handlebars')
-                .create({defaultLayout : 'main'});
-// register handlebars as the view template engine
+// set up express-handlebars view engine (template framework)
+// load the express-handlebars modules, create a default layout called main
+const handlebars = require('express-handlebars')
+                .create({defaultLayout: 'main'});
+                
+// register express-handlebars as the view template engine
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
 // app.set(name, value) method in express
 app.set('port', process.env.PORT || 3000);
 
+// add a home route, root path. Use app.render to render view (home.handlebar) and send 
+// rendered HTML strings to the client
+    
+
 app.get(('/'),(req,res) => {
-    res.type('text/plain');
-    res.status(200).send('2020 Travel Agency');
+    // view engine will specify content type and status code
+    // default text/html and 200
+    res.render('home');
 });
 
+app.get(('/home'),(req,res) => {
+    // view engine will specify content type and status code
+    // default text/html and 200
+    res.render('home');
+});
 app.get(('/about'),(req,res) => {
-    res.type('text/plain');
-    res.status(200).send('About 2020 Travel Agency');
+    res.render('about');
 });
 
  // custom 404 page
+ // 404 catch-all handler(mounting the speciefied callback 
+ // middleware function)(app.use adds that). Catchs all other path cases not
+ // specified above in other routes
 app.use((req,res,next) => {
-    res.type('text/plain');
     res.status(404);
-    res.send('404 - Not Found');
+    res.render('404');
 });
 
  // custom 500 page
+ // 500 error handler(middleware)
+
  app.use((err,req,res, next) => {
     console.error(err.stack);
-    res.type('text/plain');
     res.status(500);
-    res.send('500 - Not Found');
+    res.render('500');
 });
 
 app.listen(app.get('port'), () =>{
