@@ -1,7 +1,19 @@
-const express = require('express');
+// After installing Express by npm, we need to tell the application
+// we require express.
+const express = require('express');  
 
+// Creating the app object, our express application, by calling top-level 
+// express() function.
 const app = express();
 
+// set up handlebars view engine (template framework)
+const handlebars = require('handlebars')
+                .create({defaultLayout : 'main'});
+// register handlebars as the view template engine
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+
+// app.set(name, value) method in express
 app.set('port', process.env.PORT || 3000);
 
 app.get(('/'),(req,res) => {
