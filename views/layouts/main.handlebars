@@ -8,8 +8,17 @@ for the different views of the app --}}
     <title>The Spot Travel Site</title>
 </head>
 <body>
-    <header><img src="/img/logo2.png" alt="The Spot logo" height="55px" width="85px" ></header>
+    <header style = "font-size:0.8em; font-family:Helvetica, sans-serif; position: sticky; width:100%; display:flex; align-items:center;">
+        <div class = "logo">
+            <img src="/img/logo2.png" alt="The Spot logo" style = "height: 5rem; width:10rem" >
+        </div>
+        <div class = "company name" style = "width:100%"> 
+            <h1 class="name" style = "text-align: center; color: #0e51b9;">The Spot Travel Agency</h1>
+        </div>
+    </header>
     {{!-- body placeholder will be replaced with HTML for each view --}}
-    {{body}}
+    <div>
+        {{body}}    
+    </div>
 </body>
 </html>
