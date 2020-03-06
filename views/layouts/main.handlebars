@@ -7,8 +7,10 @@ for the different views of the app --}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Spot Travel Site</title>
 </head>
-<body>
-    <header style = "font-size:0.8em; font-family:Helvetica, sans-serif; position: sticky; width:100%; display:flex; align-items:center;">
+<body style = "font-family:Helvetica, sans-serif;">
+
+    {{!-- HEADER OF WEBSITE --}}
+    <header style = "font-size:0.8em; position: sticky; width:100%; display:flex; align-items:center;">
         <div class = "logo">
             <img src="/img/logo2.png" alt="The Spot logo" style = "height: 5rem; width:10rem" >
         </div>
@@ -16,9 +18,18 @@ for the different views of the app --}}
             <h1 class="name" style = "text-align: center; color: #0e51b9;">The Spot Travel Agency</h1>
         </div>
     </header>
+    {{!-- END OF HEADER --}}
+
     {{!-- body placeholder will be replaced with HTML for each view --}}
-    <div>
-        {{body}}    
+    <div class="main" style="height: 80vh;">
+        {{{body}}}    
     </div>
+    {{!-- END OF BODY PLACEHOLDER --}}
+
+    {{!-- FOOTER --}}
+    <footer class="footer" style = "font-size: 0.8em; font-family:Helvetica, sans-serif; position: sticky; width:100%; display:flex; align-items:center; justify-content:center">
+        <p style="text-align: center; color: #0e51b9;">The Spot, your travel agency</p>
+    </footer>
+
 </body>
 </html>
