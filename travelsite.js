@@ -6,6 +6,18 @@ const express = require('express');
 // express() function
 const app = express();
 
+// define an array of fortune cookies message to be displayed on the About page
+const fortunes = [
+    "Love is all that matters in the end.",
+    "Be a hero today!",
+    "A fresh start will put you on your way.",
+    "A friend asks only for your time not your money",
+    "The fortune you seek is in another cookie.",
+    "You will live long enough to open many fortune cookies.",
+    "You can always find happiness at work on Friday.",
+    "Fortune not found? Abort, Retry, Ignore.",
+]
+
 // set up express-handlebars view engine (template framework)
 // load the express-handlebars modules, create a default layout called main
 const handlebars = require('express-handlebars')
@@ -28,7 +40,9 @@ app.get(['/','/home'],(req,res) => {
 });
 
 app.get(('/about'),(req,res) => {
-    res.render('about');
+    const randomNumber = Math.floor(Math.random()*fortunes.length);
+    const randomFortune = fortunes[randomNumber];
+    res.render('about',{cookie: randomFortune});
 });
 
  // custom 404 page
