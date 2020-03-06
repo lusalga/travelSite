@@ -15,16 +15,16 @@ const handlebars = require('express-handlebars')
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
-// static middleware designates one or more directions containing static resources
+// static middleware(express.static) designates one or more directions containing static resources
 app.use(express.static(__dirname + '/public'));
 
 // app.set(name, value) method in express
 app.set('port', process.env.PORT || 3000);
 
-// add a home route, root path. Use app.render to render view (home.handlebar) and send 
+// add home route, root path
+// use app.render to render view (home.handlebar) and send 
 // rendered HTML strings to the client
     
-
 app.get(('/'),(req,res) => {
     // view engine will specify content type and status code
     // default text/html and 200
@@ -45,8 +45,7 @@ app.get(('/about'),(req,res) => {
  // middleware function)(app.use adds that). Catchs all other path cases not
  // specified above in other routes
 app.use((req,res,next) => {
-    res.status(404);
-    res.render('404');
+    res.status(404).render('404');
 });
 
  // custom 500 page
@@ -54,8 +53,7 @@ app.use((req,res,next) => {
 
  app.use((err,req,res, next) => {
     console.error(err.stack);
-    res.status(500);
-    res.render('500');
+    res.status(500).render('500');
 });
 
 app.listen(app.get('port'), () =>{

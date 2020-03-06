@@ -5,7 +5,7 @@ In construction...
 
 ### `Objective`
 
-Create a Responsive website. Server will be build with Node.js. 
+Create a static application using Express.js. The web page also is to be esponsive website. 
 
 
 ### `State we are at`
