@@ -18,24 +18,15 @@ app.set('view engine', 'handlebars');
 // static middleware(express.static) designates one or more directions containing static resources
 app.use(express.static(__dirname + '/public'));
 
-// app.set(name, value) method in express
-app.set('port', process.env.PORT || 3000);
-
-// add home route, root path
+// add home route or root path, for two cases, '/' and 'home' routes
 // use app.render to render view (home.handlebar) and send 
 // rendered HTML strings to the client
-    
-app.get(('/'),(req,res) => {
+app.get(['/','/home'],(req,res) => {
     // view engine will specify content type and status code
     // default text/html and 200
     res.render('home');
 });
 
-app.get(('/home'),(req,res) => {
-    // view engine will specify content type and status code
-    // default text/html and 200
-    res.render('home');
-});
 app.get(('/about'),(req,res) => {
     res.render('about');
 });
@@ -55,6 +46,9 @@ app.use((req,res,next) => {
     console.error(err.stack);
     res.status(500).render('500');
 });
+
+// app.set(name, value) method in express
+app.set('port', process.env.PORT || 3000);
 
 app.listen(app.get('port'), () =>{
     console.log('Express started on http:localhost:' +
