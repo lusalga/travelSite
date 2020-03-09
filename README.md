@@ -6,7 +6,7 @@ In construction...
 ### `Objective`
 
 Create a static application using Express.js for server side.
-We build frontend application with the view Engine Handlebars.js.
+We build frontend application with the view Engine Express-Handlebars.
 The web page also is to be esponsive website. 
 
 
