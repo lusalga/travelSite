@@ -1,4 +1,5 @@
 # ignore packages installed by npm
-node_modules
+/node_modules
 
-# put other files 
+# put other files
+*~ 
