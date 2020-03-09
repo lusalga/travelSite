@@ -1,5 +1,5 @@
 // After installing Express by npm,
-// we load the express module
+// we load/import the Express module in main application file
 const express = require('express');  
 
 // create the app object, our Express application, by calling top-level 
