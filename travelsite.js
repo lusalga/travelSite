@@ -26,6 +26,7 @@ app.use(express.static(__dirname + '/public'));
 app.get(['/','/home'],(req,res) => {
     // view engine will specify content type and status code
     // default text/html and 200
+    // res.render method renders a view and sends the rendered HTML string to the client
     res.render('home');
 });
 
@@ -38,6 +39,7 @@ app.get(('/about'),(req,res) => {
  // middleware function)(app.use adds that). Catchs all other path cases not
  // specified above in other routes
 app.use((req,res,next) => {
+    // render sets status/200, we need to set path to 404 or response will have 200 status
     res.status(404).render('404');
 });
 
