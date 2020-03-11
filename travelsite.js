@@ -50,6 +50,10 @@ app.use((req,res,next) => {
     res.status(500).render('500');
 });
 
+// disabling Express's default X-Powered-By header(which is sent via response object's headers)
+// x-powered-by is one of application settings that can be disable/enable
+app.disable('x-powered-by');
+
 // app.set(name, value) method in express
 app.set('port', process.env.PORT || 3000);
 
