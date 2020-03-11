@@ -24,9 +24,9 @@ app.use(express.static(__dirname + '/public'));
 // use app.render to render view (home.handlebar) and send 
 // rendered HTML strings to the client
 app.get(['/','/home'],(req,res) => {
-    // view engine will specify content type and status code
-    // default text/html and 200
-    // res.render method renders a view and sends the rendered HTML string to the client
+    // view engine will specify content type default text/html
+    // res.render method renders a view, defaults to a response code of 200
+    // and sends the rendered HTML string to the client 
     res.render('home');
 });
 
