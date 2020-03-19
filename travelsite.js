@@ -30,6 +30,7 @@ app.get(['/','/home'],(req,res) => {
     res.render('home');
 });
 
+// res.render defaults to a response code of 200;
 app.get(('/about'),(req,res) => {
     res.render('about',{ cookie: fortune.getFortune() } );
 });
@@ -39,7 +40,7 @@ app.get(('/about'),(req,res) => {
  // middleware function)(app.use adds that). Catchs all other path cases not
  // specified above in other routes
 app.use((req,res,next) => {
-    // render sets status/200, we need to set path to 404 or response will have 200 status
+    // setting path to 404 or response will have 200 status
     res.status(404).render('404');
 });
 
