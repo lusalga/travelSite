@@ -4,6 +4,7 @@ const express = require('express');
 // import module created and located in lib folder
 const fortune = require('./lib/fortune.js');
 
+const path = require('path');
 // create the app object, our Express application, by calling top-level 
 // express() function
 const app = express();
@@ -18,7 +19,7 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
 // static middleware(express.static) designates one or more directions containing static resources
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname + '/public')));
 
 // add home route or root path, for two cases, '/' and 'home' routes
 // use app.render to render view (home.handlebar) and send 

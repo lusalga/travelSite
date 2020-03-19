@@ -1,0 +1,52 @@
+body, html {
+    margin:0;
+    padding:0;
+    width: 100%;
+    height: 100%;
+    background: #C9D6FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family:Helvetica, sans-serif;
+}
+/* styling HEADER */
+header {
+    font-size:0.8em; 
+    position: sticky; 
+    width:100%; 
+    display:flex; 
+    align-items:center;
+}
+
+.logo > img {
+    height: 5rem;
+    width:10rem;
+}
+
+div.company-name {
+    width:100%;
+}
+
+.company-name > h1 {
+    text-align: center; 
+    color: #0e51b9;
+}
+
+/* STYLING MAIN CONTENT */
+div.main {
+    height: 80vh;
+}
+
+/* Styling FOOTER */
+footer {
+    font-size: 0.8em; 
+    font-family:Helvetica, sans-serif; 
+    position: sticky; 
+    width:100%; 
+    display:flex; 
+    align-items:center; 
+    justify-content:center;
+}
+footer > p {
+    text-align: center; 
+    color: #0e51b9;
+}
