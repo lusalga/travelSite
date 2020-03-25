@@ -1,25 +1,28 @@
 // After installing Express by npm,
 // we load/import the Express module in main application file
 const express = require('express');  
-// import module created and located in lib folder
+const bodyParser = require('body-parser'); // importing middleware for form handling
+const app = express(); // create the app object, our Express application, by calling top-level express() function
+const path = require('path');
+
+// import module, created and located in lib folder
 const fortune = require('./lib/fortune.js');
 
-const path = require('path');
-// create the app object, our Express application, by calling top-level 
-// express() function
-const app = express();
 
 // set up express-handlebars view engine (template framework)
 // load the express-handlebars modules, create a default layout called main
 const handlebars = require('express-handlebars')
                 .create({defaultLayout: 'main'});
                 
-// register express-handlebars as the view template engine
-app.engine('handlebars', handlebars.engine);
+app.engine('handlebars', handlebars.engine); // register handlebars constant as the view template engine
 app.set('view engine', 'handlebars');
 
 // static middleware(express.static) designates one or more directions containing static resources
 app.use(express.static(path.join(__dirname + '/public')));
+
+// middleware to parse the incoming URL-encoded body 
+app.use(bodyParser.urlencoded( { extended: true} )) // parse application/x-www-form-urlencoded
+
 
 // add home route or root path, for two cases, '/' and 'home' routes
 // use app.render to render view (home.handlebar) and send 
