@@ -7,6 +7,7 @@ body, html {
     background: -webkit-linear-gradient(to bottom, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-family:Helvetica, sans-serif;
+    text-align: center;
 }
 /* styling HEADER */
 header {
@@ -22,12 +23,11 @@ header {
     width:10rem;
 }
 
-div.company-name {
+div.page-title {
     width:100%;
 }
 
-.company-name > h1 {
-    text-align: center; 
+.page-title {
     color: #0e51b9;
 }
 
@@ -35,6 +35,24 @@ div.company-name {
 div.main {
     height: 80vh;
 }
+
+div.outter {
+    width: 50%;
+}
+
+@media only screen and (min-width: 400px) {
+    div.outter {
+      width: 60%;
+    }
+}
+
+
+@media only screen and (min-width: 800px) {
+    div.outter {
+      width: 40%;
+    }
+}
+
 
 /* Styling FOOTER */
 footer {
@@ -51,7 +69,4 @@ footer > p {
     color: #0e51b9;
 }
 
-/* General styling */
-h1 {
-    text-align: center;
-}
+
