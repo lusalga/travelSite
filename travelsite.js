@@ -39,6 +39,11 @@ app.get(('/about'),(req,res) => {
     res.render('about',{ cookie: fortune.getFortune() } );
 });
 
+app.get(('/newsletter-signup'),(req,res) => {
+    res.render('newsletter-signup');
+});
+
+
  // custom 404 page
  // 404 catch-all handler(mounting the speciefied callback 
  // middleware function)(app.use adds that). Catchs all other path cases not
