@@ -43,7 +43,7 @@ div.main {
     color: #0a2f66;
 }
 
-/* styling newsletter-signup handlebars */
+/* newsletter-signup styling */
 div.outter {
     max-width: 60%; /*size of outer div for form box*/
     min-height: 50vh;
@@ -136,7 +136,16 @@ div.outter {
     }
 }
 
-/* end of styling */
+/* about page styling*/
+.row {
+    margin-top: 5vh;
+}
+blockquote.fortuneCookie {
+    margin-top: 5vh;
+    color: rgb(173, 109, 25);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
 
 /* Styling FOOTER */
 footer {
