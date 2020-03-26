@@ -23,7 +23,6 @@ app.use(express.static(path.join(__dirname + '/public')));
 // middleware to parse the incoming URL-encoded body 
 app.use(bodyParser.urlencoded( { extended: true} )) // parse application/x-www-form-urlencoded
 
-
 // add home route or root path, for two cases, '/' and 'home' routes
 // use app.render to render view (home.handlebar) and send 
 // rendered HTML strings to the client
@@ -40,9 +39,16 @@ app.get(('/about'),(req,res) => {
 });
 
 app.get(('/newsletter-signup'),(req,res) => {
-    res.render('newsletter-signup');
+    res.render('newsletter-signup', { csrf: 'CSRF token goes here' });
 });
-
+// handling POST request of form to redirect to a 'thank-you' view
+app.post('/process', (req,res) => {
+    console.log('Form (from querystring:' + req.query.form);
+    console.log('CSRF token (from hidden field:' + req.body._csrf);
+    console.log('Name (from visible field:' + req.body.name);
+    console.log('Email (from visible field:' + req.body.email);
+    res.redirect(303, '/thank-you');
+});
 
  // custom 404 page
  // 404 catch-all handler(mounting the speciefied callback 
