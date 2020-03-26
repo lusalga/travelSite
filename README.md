@@ -37,6 +37,8 @@ Created views, a layout, a logo and a main application file.
 
 - Deploy website on Github.
 
+- Add favicon icon.
+
 
 
 To be defined later.
