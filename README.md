@@ -28,6 +28,8 @@ Created views, a layout, a logo and a main application file.
 
 - Install dependencies (npm instal command).
 
+- Create a thank-you view.
+
 
 ### `Next steps`
 
