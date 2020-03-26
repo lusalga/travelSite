@@ -16,7 +16,7 @@ body {
 
 }
 /* styling HEADER */
-header {
+.headerLogo {
     font-size:0.8em; 
     position: sticky; 
     width:100%; 
@@ -36,6 +36,7 @@ div.page-title {
 .page-title {
     color: #0e51b9;
 }
+
 
 /* STYLING MAIN CONTENT */
 div.main {
