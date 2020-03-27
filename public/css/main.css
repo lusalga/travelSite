@@ -11,17 +11,28 @@ body {
     background: #C9D6FF;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to bottom, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    font-family:Helvetica, sans-serif;
+    font-family: 'Merriweather', serif; /* From Google Fonts*/
     text-align: center;
 
 }
 /* styling HEADER */
+
 .headerLogo {
     font-size:0.8em; 
-    position: sticky; 
+    /* position: sticky; better fixed position, used Bootstrap*/
     width:100%; 
     display:flex; 
     align-items:center;
+    /* background-color: #242526; */
+    background: #141E30;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 3px;
+    /* box-shadow: inset -12px -8px 40px #464646; */
+    
+}
+nav.navbar {
+    padding-top: 6.5rem;
 }
 
 .logo > img {
@@ -34,9 +45,14 @@ div.page-title {
 }
 
 .page-title {
-    color: #0e51b9;
+    color: #99b1e8;
 }
 
+nav .newColor  {
+    color: rgb(153, 177, 232) !important;
+
+
+}
 
 /* STYLING MAIN CONTENT */
 div.main {
@@ -146,6 +162,7 @@ blockquote.fortuneCookie {
     color: rgb(173, 109, 25);
     font-size: 1.4rem;
     font-weight: 600;
+    font-family: 'Liu Jian Mao Cao', cursive;
 }
 
 /* Styling FOOTER */
