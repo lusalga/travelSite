@@ -30,6 +30,8 @@ Created views, a layout, a logo and a main application file.
 
 - Create a thank-you view.
 
+- Add links to Navbar <a> tags.
+
 
 ### `Next steps`
 
