@@ -41,13 +41,13 @@ app.get(('/about'),(req,res) => {
 app.get(('/newsletter-signup'),(req,res) => {
     res.render('newsletter-signup', { csrf: 'CSRF token goes here' });
 });
-// handling POST request of form to redirect to a 'thank-you' view
+// handling POST request from FORM   (newsletter-signup view) to redirect to a 'thank-you' view
 app.post('/process', (req,res) => {
-    console.log('Form (from querystring:' + req.query.form);
-    console.log('CSRF token (from hidden field:' + req.body._csrf);
-    console.log('Name (from visible field:' + req.body.name);
-    console.log('Email (from visible field:' + req.body.email);
-    res.redirect(303, '/thank-you');
+    console.log('Form (from querystring:) ' + req.query.form);
+    console.log('CSRF token (from hidden field:) ' + req.body._csrf);
+    console.log('Name (from visible field:) ' + req.body.name);
+    console.log('Email (from visible field:) ' + req.body.email);
+    res.redirect(303, '/thank-you'); // server redirects to path/url
 });
 
  // custom 404 page
