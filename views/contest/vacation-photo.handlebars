@@ -1,0 +1,50 @@
+ <div class="container outter shadow1 rounded-lg pt-4 mt-5 overflow-auto">
+    <div class="header p-4">
+        <h3 class="formHeading">The Spot Vacation Photo Contest!</h3>
+        <p>Submit your photo below for a chance to win a trip do Hawaii! </p>
+    </div> 
+    <div class="containter-fluid body-form ">
+        <form class="form-horizontal" role = "form" 
+            enctype="multipart/form-data"
+            action="/contest/vacation-photo/{year}/{month}" method = "POST"
+        >
+            {{!-- entering NAME as input --}}
+            <div class="form-group">
+                <label for="fieldName" class=" form-label">
+                    Name
+                </label>
+                <div class="col">
+                    <input type="text" class="form-control"
+                        id="fieldName" name="name"
+                    >
+                </div>
+            </div>
+            {{!-- entering EMAIL as input --}}
+            <div class="form-group">
+                <label for="fieldEmail" class="form-label">Email</label>
+                <div class="col">
+                    <input type="email" class="form-control" required
+                        id="fieldEmail" name="email"
+                    >
+                </div>
+            </div>
+            {{!-- entering VACATION PHOTO --}}
+            <div class="form-group">
+                <label for="fieldPhoto" class="form-label">Vacation photo</label>
+                <div class="col">
+                    <input type="file" class="form-control fileInput" required
+                        accept="image/*" id="fieldPhoto" name="photo"
+                    >
+                </div>
+            </div>
+            {{!-- Submitting info --}}
+            <div class="form-group">
+                <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-secondary border border-light hvr-bounce-to-right ">
+                    Submit
+                </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
