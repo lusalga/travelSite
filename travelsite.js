@@ -50,6 +50,11 @@ app.post('/process', (req,res) => {
     res.redirect(303, '/thank-you'); // server redirects to path/url
 });
 
+app.get(('/contest/vacation-photo'),(req,res) => {
+    res.render('contest/vacation-photo');
+    console.log("Sucess!");
+});
+
  // custom 404 page
  // 404 catch-all handler(mounting the speciefied callback 
  // middleware function)(app.use adds that). Catchs all other path cases not
