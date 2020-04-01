@@ -4,7 +4,7 @@ const express = require('express');
 const bodyParser = require('body-parser'); // importing middleware for form handling
 const app = express(); // create the app object, our Express application, by calling top-level express() function
 const path = require('path');
-
+const formidable = require('formidable'); // install formidable to parse form data(file uploads);
 // import module, created and located in lib folder
 const fortune = require('./lib/fortune.js');
 
@@ -41,7 +41,7 @@ app.get(('/about'),(req,res) => {
 app.get(('/newsletter-signup'),(req,res) => {
     res.render('newsletter-signup', { csrf: 'CSRF token goes here' });
 });
-// handling POST request from FORM   (newsletter-signup view) to redirect to a 'thank-you' view
+// handling POST request from FORM (action attribute path)(newsletter-signup view) to redirect to a 'thank-you' view
 app.post('/process', (req,res) => {
     console.log('Form (from querystring:) ' + req.query.form);
     console.log('CSRF token (from hidden field:) ' + req.body._csrf);
