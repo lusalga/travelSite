@@ -51,8 +51,12 @@ app.post('/process', (req,res) => {
 });
 
 app.get(('/contest/vacation-photo'),(req,res) => {
-    res.render('contest/vacation-photo');
-    console.log("Sucess!");
+    const now = new Date();
+    res.render('contest/vacation-photo',{
+        year: now.getFullYear(), 
+        month: now.getMonth()
+    });
+    console.log(now);
 });
 
  // custom 404 page
