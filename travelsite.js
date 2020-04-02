@@ -20,7 +20,7 @@ app.set('view engine', 'handlebars');
 // static middleware(express.static) designates one or more directions containing static resources
 app.use(express.static(path.join(__dirname + '/public')));
 
-// middleware to parse the incoming URL-encoded body 
+// middleware to parse the incoming URL-encoded body from forms
 app.use(bodyParser.urlencoded( { extended: true} )) // parse application/x-www-form-urlencoded
 
 // add home route or root path, for two cases, '/' and 'home' routes
@@ -34,11 +34,11 @@ app.get(['/','/home'],(req,res) => {
 });
 
 // res.render defaults to a response code of 200;
-app.get(('/about'),(req,res) => {
+app.get('/about',(req,res) => {
     res.render('about',{ cookie: fortune.getFortune() } );
 });
 
-app.get(('/newsletter-signup'),(req,res) => {
+app.get('/newsletter-signup',(req,res) => {
     res.render('newsletter-signup', { csrf: 'CSRF token goes here' });
 });
 // handling POST request from FORM (action attribute path)(newsletter-signup view) to redirect to a 'thank-you' view
@@ -50,13 +50,28 @@ app.post('/process', (req,res) => {
     res.redirect(303, '/thank-you'); // server redirects to path/url
 });
 
-app.get(('/contest/vacation-photo'),(req,res) => {
+app.get('/contest/vacation-photo',(req,res) => {
     const now = new Date();
     res.render('contest/vacation-photo',{
         year: now.getFullYear(), 
         month: now.getMonth()
     });
     console.log(now);
+});
+
+app.post('/contest/vacation-photo/:year/:month', (req,res) =>{
+    // using formidable to parse form data, creating new form
+    const form = new formidable.IncomingForm();
+    form.parse(req, (err, fields,files) =>{
+        if (err) {
+            return res.redirect(303,'/error');
+        }
+        console.log('received fields:');
+        console.log( fields);
+        console.log('received files:');
+        console.log(files);
+        res.redirect(303,'/thank-you');
+    });
 });
 
  // custom 404 page
