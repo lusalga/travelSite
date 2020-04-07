@@ -31,12 +31,13 @@ Created views, a layout, a logo and a main application file.
 
 - Add links to Navbar <a> tags.
 
+- Add favicon icon.
+
 
 ### `Next steps`
 
 - Add content to webpage. 
 
-- Add favicon icon.
 
 - Main content need to be worked on.
 
