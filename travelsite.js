@@ -33,7 +33,6 @@ app.get(['/','/home'],(req,res) => {
     // view engine will specify content type default text/html
     // res.render method renders a view, defaults to a response code of 200
     // and sends the rendered HTML string to the client 
-    res.cookie('signed_monster', 'nom nom', {signed: true});
     res.render('home');
 });
 
