@@ -8,7 +8,7 @@ const formidable = require('formidable'); // install formidable to parse form da
 // import module, created and located in lib folder
 const fortune = require('./lib/fortune.js');
 const credentials = require('./credentials.js'); //importing credentials to application
-
+const cookieParser = require('cookie-parser');
 
 // set up express-handlebars view engine (template framework)
 // load the express-handlebars modules, create a default layout called main
@@ -24,6 +24,8 @@ app.use(express.static(path.join(__dirname + '/public')));
 // middleware to parse the incoming URL-encoded body from forms
 app.use(bodyParser.urlencoded( { extended: true} )) // parse application/x-www-form-urlencoded
 
+app.use(cookieParser(credentials.cookieSecret)); 
+
 // add home route or root path, for two cases, '/' and 'home' routes
 // use app.render to render view (home.handlebar) and send 
 // rendered HTML strings to the client
@@ -31,6 +33,7 @@ app.get(['/','/home'],(req,res) => {
     // view engine will specify content type default text/html
     // res.render method renders a view, defaults to a response code of 200
     // and sends the rendered HTML string to the client 
+    res.cookie('signed_monster', 'nom nom', {signed: true});
     res.render('home');
 });
 
@@ -57,7 +60,7 @@ app.get('/contest/vacation-photo',(req,res) => {
         year: now.getFullYear(), 
         month: now.getMonth()
     });
-    console.log(now);
+    // console.log(now);
 });
 
 app.post('/contest/vacation-photo/:year/:month', (req,res) =>{
