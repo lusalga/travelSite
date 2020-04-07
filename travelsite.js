@@ -7,6 +7,7 @@ const path = require('path');
 const formidable = require('formidable'); // install formidable to parse form data(file uploads);
 // import module, created and located in lib folder
 const fortune = require('./lib/fortune.js');
+const credentials = require('./credentials.js'); //importing credentials to application
 
 
 // set up express-handlebars view engine (template framework)
