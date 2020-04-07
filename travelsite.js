@@ -9,6 +9,7 @@ const formidable = require('formidable'); // install formidable to parse form da
 const fortune = require('./lib/fortune.js');
 const credentials = require('./credentials.js'); //importing credentials to application
 const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 // set up express-handlebars view engine (template framework)
 // load the express-handlebars modules, create a default layout called main
@@ -25,6 +26,11 @@ app.use(express.static(path.join(__dirname + '/public')));
 app.use(bodyParser.urlencoded( { extended: true} )) // parse application/x-www-form-urlencoded
 
 app.use(cookieParser(credentials.cookieSecret)); 
+app.use(session({
+    resave:false,
+    saveUninitialized: false,
+    secret: credentials.cookieSecret
+}));
 
 // add home route or root path, for two cases, '/' and 'home' routes
 // use app.render to render view (home.handlebar) and send 
