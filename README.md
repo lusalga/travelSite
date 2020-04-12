@@ -38,7 +38,6 @@ Created views, a layout, a logo and a main application file.
 
 - Add content to webpage. 
 
-
 - Main content need to be worked on.
 
 - Home page needs more info.
@@ -53,7 +52,7 @@ Created views, a layout, a logo and a main application file.
 
 - contest/vacation-photo route needs backend implementation.
 
-- /thank-you view needs to be implemented. 
+- /thank-you view needs to be implemented. Implemented completed, need to working with sessions.
 
 - Database needs to be implemented, might use MongoDB.
 
