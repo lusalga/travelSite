@@ -51,12 +51,8 @@ app.get('/newsletter-signup',(req,res) => {
     res.render('newsletter-signup', { csrf: 'CSRF token goes here' });
 });
 
-app.get('/newsletter-thankYou', (req,res) => {
-    res.render('newsletter-thankYou');
-});
-
-app.get('/phoContest-thank-you', (req,res) => {
-    res.render('phoContest-thank-you');
+app.get('/news-thank-you', (req,res) => {
+    res.render('news-thank-you');
 });
 
 
@@ -66,7 +62,7 @@ app.post('/process', (req,res) => {
     console.log('CSRF token (from hidden field:) ' + req.body._csrf);
     console.log('Name (from visible field:) ' + req.body.name);
     console.log('Email (from visible field:) ' + req.body.email);
-    res.redirect(303, '/newsletter-thankYou'); // server redirects to path/url
+    res.redirect(303, '/news-thank-you'); // server redirects to path/url
 });
 
 app.get('/contest/vacation-photo',(req,res) => {
@@ -89,9 +85,15 @@ app.post('/contest/vacation-photo/:year/:month', (req,res) =>{
         console.log( fields);
         console.log('received files:');
         console.log(files);
-        res.redirect(303,'/phoContest-thank-you');
+        res.redirect(303,'/contest-thank-you');
+        
     });
 });
+
+app.get('/contest-thank-you', (req,res) => {
+    res.render('contest-thank-you');
+});
+
 
  // custom 404 page
  // 404 catch-all handler(mounting the speciefied callback 
