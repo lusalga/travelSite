@@ -50,6 +50,12 @@ app.get('/about',(req,res) => {
 app.get('/newsletter-signup',(req,res) => {
     res.render('newsletter-signup', { csrf: 'CSRF token goes here' });
 });
+
+app.get('/thank-you', (req,res) => {
+    res.render('thank-you');
+});
+
+
 // handling POST request from FORM (action attribute path)(newsletter-signup view) to redirect to a 'thank-you' view
 app.post('/process', (req,res) => {
     console.log('Form (from querystring:) ' + req.query.form);
