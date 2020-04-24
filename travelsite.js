@@ -96,7 +96,7 @@ app.get('/contest-thank-you', (req,res) => {
 
 
  // custom 404 page
- // 404 catch-all handler(mounting the speciefied callback 
+ // 404 catch-all handler(mounting the specified callback 
  // middleware function)(app.use adds that). Catchs all other path cases not
  // specified above in other routes
 app.use((req,res,next) => {
@@ -118,9 +118,11 @@ app.disable('x-powered-by');
 // app.set(name, value) method in express
 app.set('port', process.env.PORT || 3000);
 
-app.listen(app.get('port'), () =>{
-    console.log('Express started on http:localhost:' +
-    app.get('port') + ' ; press Ctrl + C to terminate,');
+// getting which execution environment we have our app running with app.get('env')
+app.listen(app.get('port'), () => {
+    console.log('Express started in ' + app.get('env') + 
+    ' mode on http://localhost:' + app.get('port') + 
+    '; press Ctrl + C to terminate.');
 
 });
 
