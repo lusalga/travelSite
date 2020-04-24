@@ -10,6 +10,7 @@ const fortune = require('./lib/fortune.js');
 const credentials = require('./credentials.js'); //importing credentials to application
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const morgan = require('morgan'); //colorful dev logging
 
 // set up express-handlebars view engine (template framework)
 // load the express-handlebars modules, create a default layout called main
@@ -31,6 +32,11 @@ app.use(session({
     saveUninitialized: false,
     secret: credentials.cookieSecret
 }));
+
+// logging requests, on development environment 
+// if (app.get('env') == 'development') {
+//     app.use(morgan('combined'));
+// }
 
 // add home route or root path, for two cases, '/' and 'home' routes
 // use app.render to render view (home.handlebar) and send 
@@ -114,6 +120,7 @@ app.use((req,res,next) => {
 // disabling Express's default X-Powered-By header(which is sent via response object's headers)
 // x-powered-by is one of application settings that can be disable/enable
 app.disable('x-powered-by');
+
 
 // app.set(name, value) method in express
 app.set('port', process.env.PORT || 3000);
