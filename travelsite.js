@@ -126,10 +126,21 @@ app.disable('x-powered-by');
 app.set('port', process.env.PORT || 3000);
 
 // getting which execution environment we have our app running with app.get('env')
-app.listen(app.get('port'), () => {
-    console.log('Express started in ' + app.get('env') + 
-    ' mode on http://localhost:' + app.get('port') + 
-    '; press Ctrl + C to terminate.');
 
-});
 
+const startServer = () => {
+    app.listen(app.get('port'), () => {
+        console.log('Express started in ' + app.get('env') + 
+        ' mode on http://localhost:' + app.get('port') + 
+        '; press Ctrl + C to terminate.');
+    });
+};
+if (require.main === module) {
+    //application runs directly; start app server
+    // a script runs directly
+    startServer();
+} else {
+    //application is imported via a module require:export function to create server
+    // script has been loaded from another script using require
+    module.exports = startServer;
+}
