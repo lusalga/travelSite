@@ -10,6 +10,7 @@ const fortune = require('./lib/fortune.js');
 const credentials = require('./credentials.js'); //importing credentials to application
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const morgan = require('morgan'); //colorful dev logging
 
 // set up express-handlebars view engine (template framework)
 // load the express-handlebars modules, create a default layout called main
@@ -32,13 +33,23 @@ app.use(session({
     secret: credentials.cookieSecret
 }));
 
-// add home route or root path, for two cases, '/' and 'home' routes
-// use app.render to render view (home.handlebar) and send 
-// rendered HTML strings to the client
+//logging requests, on development environment 
+// if (app.get('env') == 'development') app.use(morgan('combined'));
+
+// to view workers being logged and which receives request and other info needed
+app.use(function(req,res,next){
+    const cluster = require('cluster');
+    if (cluster.isWorker) console.log('Worker %d received request',
+        cluster.worker.id, req.method);
+    next();
+});
+
+// add home route or root path, for two cases, '/' and 'home' routes;
+// use app.render to render view (home.handlebars)
 app.get(['/','/home'],(req,res) => {
     // view engine will specify content type default text/html
     // res.render method renders a view, defaults to a response code of 200
-    // and sends the rendered HTML string to the client 
+    // sending rendered HTML string to the client 
     res.render('home');
 });
 
@@ -115,14 +126,27 @@ app.use((req,res,next) => {
 // x-powered-by is one of application settings that can be disable/enable
 app.disable('x-powered-by');
 
+
 // app.set(name, value) method in express
 app.set('port', process.env.PORT || 3000);
 
 // getting which execution environment we have our app running with app.get('env')
-app.listen(app.get('port'), () => {
-    console.log('Express started in ' + app.get('env') + 
-    ' mode on http://localhost:' + app.get('port') + 
-    '; press Ctrl + C to terminate.');
 
-});
+// changed to add node clusters 
+const startServer = () => {
+    app.listen(app.get('port'), () => {
+        console.log('Express started in ' + app.get('env') + 
+        ' mode on http://localhost:' + app.get('port') + 
+        '; press Ctrl + C to terminate.');
+    });
+};
 
+if (require.main === module) {
+    //application runs directly; start app server
+    // a script runs directly
+    startServer();
+} else {
+    //application is imported via a module require:export function to create server
+    // script has been loaded from another script using require
+    module.exports = startServer;
+}
