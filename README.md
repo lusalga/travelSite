@@ -52,7 +52,7 @@ Created views, a layout, a logo and a main application file.
 
 - contest/vacation-photo route needs backend implementation.
 
-- /thank-you view needs to be implemented. Implemented completed, need to working with sessions.
+- /thank-you view needs to be implemented. Implemented completed, need to be working with sessions.
 
 - Database needs to be implemented, might use MongoDB.
 
