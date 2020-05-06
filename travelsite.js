@@ -33,7 +33,7 @@ app.use(session({
     secret: credentials.cookieSecret
 }));
 
-//logging requests, on development environment 
+//log requests made by user on browser on development environment 
 // if (app.get('env') == 'development') app.use(morgan('combined'));
 
 // to view workers being logged and which receives request and other info needed
@@ -62,10 +62,10 @@ app.get('/newsletter-signup',(req,res) => {
     res.render('newsletter-signup', { csrf: 'CSRF token goes here' });
 });
 
-app.get('/news-thank-you', (req,res) => {
+app.get('/news-thank-you', (req,res, next) => {
     res.render('news-thank-you');
+   
 });
-
 
 // handling POST request from FORM (action attribute path)(newsletter-signup view) to redirect to a 'thank-you' view
 app.post('/process', (req,res) => {
@@ -73,7 +73,7 @@ app.post('/process', (req,res) => {
     console.log('CSRF token (from hidden field:) ' + req.body._csrf);
     console.log('Name (from visible field:) ' + req.body.name);
     console.log('Email (from visible field:) ' + req.body.email);
-    res.redirect(303, '/news-thank-you'); // server redirects to path/url
+    res.redirect(303, 'news-thank-you'); // server redirects to path/url
 });
 
 app.get('/contest/vacation-photo',(req,res) => {
