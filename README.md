@@ -56,7 +56,9 @@ Created views, a layout, a logo and a main application file.
 
 - contest/vacation-photo route needs backend implementation.
 
-- /thank-you view needs to be implemented. Implemented completed, need to be working with sessions.
+- /thank-you view needs to be implemented. It needs to be working with sessions. 
+
+- /news-thank-you view needs to be working with sessions/cookies. Right now, if person sign up for newsletter, page does not change and info stays there. We might need to change cache.
 
 - Database needs to be implemented, might use MongoDB.
 
