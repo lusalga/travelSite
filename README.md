@@ -38,6 +38,10 @@ Created views, a layout, a logo and a main application file.
 
 - Add content to webpage. 
 
+- Change project to be my blog, a cooking blog. 
+
+- Collect nice pictures for blog, remember to save with recipes, both in Portugues and in English
+
 - Main content need to be worked on.
 
 - Home page needs more info.
