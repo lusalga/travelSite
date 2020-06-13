@@ -6,7 +6,7 @@ In construction...
 ### `Objective`
 
 Create a static application using Express.js (server) and Handlebars( Express-Handlebars view engine).
-The web page will be responsive website. 
+The web page will be responsive. 
 
 ### `State we are at`
 
@@ -36,7 +36,7 @@ Created views, a layout, a logo and a main application file.
 
 ### `Next steps`
 
-- Add content to webpage. 
+- Add more content to webpage. 
 
 - Change project to be my blog, a cooking blog. 
 
@@ -44,21 +44,17 @@ Created views, a layout, a logo and a main application file.
 
 - Main content need to be worked on.
 
-- Home page needs more info.
-
-- About page needs more info.
-
 - 404 page needs new format.
 
 - 500 page needs new format.
 
 - Newsletter-signup route needs email to be linked to, as Mailchimp.
 
-- contest/vacation-photo route needs backend implementation.
+- contest/vacation-photo route needs backend implementation (you can delete this route).
 
-- /thank-you view needs to be implemented. It needs to be working with sessions. 
+- /thank-you view needs to be implemented. It needs to be working with sessions (you can delete this route). 
 
-- /news-thank-you view needs to be working with sessions/cookies. Right now, if person sign up for newsletter, page does not change and info stays there. We might need to change cache.
+- /news-thank-you view needs to be working with sessions/cookies. Right now, if person sign up for newsletter, page does not change and info stays there. We might need to change cache (you can delete this route).
 
 - Database needs to be implemented, might use MongoDB.
 
