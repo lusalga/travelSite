@@ -63,7 +63,7 @@ div.main {
 /* newsletter-signup styling */
 div.outter {
     max-width: 60%; /*size of outer div for form box*/
-    min-height: 50vh;
+    min-height: 10vh;
 }
 
 .shadow1 {
