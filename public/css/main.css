@@ -54,11 +54,31 @@ nav .newColor  {
 
 }
 
+div.gsc-control-cse{
+    background-color: transparent;
+    padding: 10px 50px;
+
+}
+
+button.gsc-search-button-v2{
+    border-color: #f8f9fa!important;
+    color: #fff;
+    background-color: #6c757d;
+    line-height: 1.5;
+    border-radius: .25rem;
+
+}
+
+
 /* STYLING MAIN CONTENT */
 div.main {
     min-height: 80vh;
     color: #0a2f66;
 }
+
+
+
+
 
 /* newsletter-signup styling */
 div.outter {
@@ -79,6 +99,11 @@ div.outter {
     margin-top: 3em;
 }
 
+div.construction {
+    border:2px red dotted;
+    margin: 20px;
+    padding: 20px 10px;
+}
 
 /* Bounce To Right */
 .hvr-bounce-to-right {

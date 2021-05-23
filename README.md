@@ -3,6 +3,13 @@
 
 In construction... 
 
+## How to use
+
+Type command:
+- node travelSite.js    // to run seb server
+
+Open local host on browser.
+
 ### `Objective`
 
 Create a static application using Express.js (server) and Handlebars( Express-Handlebars view engine).
