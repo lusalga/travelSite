@@ -1,5 +1,5 @@
 
-## Basic Travel site website
+## Basic Travel website
 
 In construction... 
 
@@ -43,13 +43,13 @@ Created views, a layout, a logo and a main application file.
 
 ### `Next steps`
 
-- Add more content to webpage. 
+- Previous experiences page;
 
-- Change project to be my blog, a cooking blog. 
+- Home and About Us pages;
 
-- Collect nice pictures for blog, remember to save with recipes, both in Portugues and in English
+- Google Maps function, add in Home and maybe Previous Experiences;
 
-- Main content need to be worked on.
+- Fix newsletter form, size to be same as contest sign up;
 
 - 404 page needs new format.
 
