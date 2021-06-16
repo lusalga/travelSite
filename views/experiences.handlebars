@@ -1,0 +1,44 @@
+ <div class="container outter shadow1 rounded-lg pt-4 mt-5 overflow-auto">
+    <div class="header p-4">
+        <h3 class="formHeading">Past experiences</h3>
+    </div> 
+    <div class="containter-fluid body-form ">
+        <form class="form-horizontal" role = "form" 
+            action="/process?form=newsletterSignup" method = "POST">
+            <input type = "hidden" name = "_csrf" value="{{csrf}}">
+            {{!-- entering NAME as input --}}
+            <div class="form-group">
+                <label for="fieldName" class=" form-label">
+                    Name
+                </label>
+                <div class="col">
+                    <input type="text" class="form-control"
+                        id="fieldName" name="name" required
+                    >
+                </div>
+            </div>
+            {{!-- entering EMAIL as input --}}
+            <div class="form-group">
+                <label for="fieldEmail" class="form-label">
+                    Email
+                </label>
+                <div class="col">
+                    <input type="email" class="form-control" required
+                        id="fieldEmail" name="email"
+                    >
+                    <small id="emailHelp" class="form-text text-muted col-sm-12 col-md-12">
+                        We'll never share your email with anyone else.
+                    </small>
+                </div>
+            </div>
+            {{!-- Submitting info --}}
+            <div class="form-group">
+                <div class="col-sm-offset-2">
+                <button type="submit" class="btn btn-secondary border border-light hvr-bounce-to-right ">
+                    Submit
+                </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
