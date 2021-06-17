@@ -56,7 +56,7 @@ div.page-title {
 
 nav .newColor  {
     color: rgb(153, 177, 232) !important;
-
+    color: #0a2f66 !important;
 
 }
 
@@ -81,9 +81,6 @@ div.main {
     min-height: 80vh;
     color: #0a2f66;
 }
-
-
-
 
 
 /* newsletter-signup styling */
