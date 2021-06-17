@@ -63,6 +63,10 @@ app.get('/newsletter-signup',(req,res) => {
     res.render('newsletter-signup', { csrf: 'CSRF token goes here' });
 });
 
+app.get('/experiences', (req,res) => {
+    res.render('experiences');
+});
+
 app.get('/news-thank-you', (req,res, next) => {
     res.render('news-thank-you');
    
@@ -106,9 +110,6 @@ app.get('/contest-thank-you', (req,res) => {
     res.render('contest-thank-you');
 });
 
-app.get('/experiences', (req,res) => {
-    res.render('experiences');
-});
 
  // custom 404 page
  // 404 catch-all handler(mounting the specified callback 

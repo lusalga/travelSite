@@ -1,44 +1,82 @@
- <div class="container outter shadow1 rounded-lg pt-4 mt-5 overflow-auto">
-    <div class="header p-4">
+
+ <div class="header p-4">
         <h3 class="formHeading">Past experiences</h3>
     </div> 
-    <div class="containter-fluid body-form ">
-        <form class="form-horizontal" role = "form" 
-            action="/process?form=newsletterSignup" method = "POST">
-            <input type = "hidden" name = "_csrf" value="{{csrf}}">
-            {{!-- entering NAME as input --}}
-            <div class="form-group">
-                <label for="fieldName" class=" form-label">
-                    Name
-                </label>
-                <div class="col">
-                    <input type="text" class="form-control"
-                        id="fieldName" name="name" required
-                    >
-                </div>
+
+ <div class="container outter shadow1 rounded-lg pt-4 mt-5 overflow-auto">
+        <!-- Portfolio Section-->
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Mexico</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
             </div>
-            {{!-- entering EMAIL as input --}}
-            <div class="form-group">
-                <label for="fieldEmail" class="form-label">
-                    Email
-                </label>
-                <div class="col">
-                    <input type="email" class="form-control" required
-                        id="fieldEmail" name="email"
-                    >
-                    <small id="emailHelp" class="form-text text-muted col-sm-12 col-md-12">
-                        We'll never share your email with anyone else.
-                    </small>
+            <!-- Portfolio Grid Items-->
+            <div class="row">
+                <!-- Portfolio Item 0-->
+                <div class="col-md-6 col-lg-6 mb-5">
+                    <h3 class="text-center text-capitalize text-secondary">Guadalajara - Mexico</h3>
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal0">
+                        <div
+                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><h4>About Trip</h4><i
+                                class="fa fa-folder-open fa-3x" aria-hidden="true"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/gif/guadalajara.png"
+                            alt="Guadalajara pic." />
+                    </div>
                 </div>
+                
             </div>
-            {{!-- Submitting info --}}
-            <div class="form-group">
-                <div class="col-sm-offset-2">
-                <button type="submit" class="btn btn-secondary border border-light hvr-bounce-to-right ">
-                    Submit
-                </button>
+        </div>
+       
+    </section>
+    
+</div>
+
+
+<div class="container outter shadow1 rounded-lg pt-4 mt-5 overflow-auto">
+    {{!-- <div class="header p-4">
+        <h3 class="formHeading">Past experiences</h3>
+    </div>  --}}
+        <!-- Portfolio Section-->
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Hawaii</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="row">
+                
+                <!-- Portfolio Item 1-->
+                <div class="col-md-6 col-lg-6 mb-5">
+                    <h3 class="text-center text-capitalize text-secondary">Oharu - Hawaii</h3>
+                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                        <div
+                            class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><h4>About trip</h4><i
+                                class="fa fa-folder-open fa-3x" aria-hidden="true"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/gif/face-recognition-app.gif"
+                            alt="Hawaii" />
+                    </div>
                 </div>
+            
+                
+            
+                
             </div>
-        </form>
-    </div>
+        </div>
+       
+    </section>
+    
 </div>
