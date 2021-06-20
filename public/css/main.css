@@ -52,21 +52,25 @@ nav.navbar {
     font-size: 1.2rem;
 
 }
-
+.nav-item {
+    transition: 0.5s;
+}
 .nav-item:hover {
     border: 2px solid rgb(153, 177, 232);
     border-radius: 5px;
-    padding: 0.2em;
+    font-weight: bold;
+    /* padding: 0.2em; */
 }
 
-.nav-item:hover {
-    border: 2px solid rgb(153, 177, 232);
-    border-radius: 5px;
+
+a.navbar-brand.newColor {
+    transition: 0.5s;
 }
 a.navbar-brand.newColor:hover {
     border: 2px solid rgb(153, 177, 232);
     border-radius: 5px;
-    padding: 0.2em;
+    /* padding: 0.2em; */
+    font-weight: bold;
 }
 
 
