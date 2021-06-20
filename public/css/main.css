@@ -41,6 +41,10 @@ nav.navbar {
     padding-top: 6.5rem;
 }
 
+.nav-item:hover {
+    border: 2px solid rgb(153, 177, 232);
+    border-radius: 5px;
+}
 /* .logo > img {
     height: 5rem;
     width:10rem;
@@ -80,6 +84,22 @@ button.gsc-search-button-v2{
 div.main {
     min-height: 80vh;
     color: #0a2f66;
+}
+h1{
+    font-size: 1.8rem;
+}
+
+/* HOME STYLING */
+.imagem {
+    width: 55rem;
+    margin-bottom: 3rem !important;
+}
+.containerHome {
+    width: 100%;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
@@ -150,9 +170,9 @@ div.construction {
     -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
     transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   }
-.formHeading {
-    font-size: 1rem;
-}
+/* .formHeading {
+    font-size: 1.5rem;
+} */
 
 /* resizing outer div of form with for many screens */
 @media only screen and (min-width: 600px) {
@@ -160,7 +180,10 @@ div.construction {
         max-width: 60%;
     }
     .formHeading {
-        font-size: 1.4rem;
+        font-size: 1.7rem;
+    }
+    h1 {
+        font-size: 1.7rem;
     }
 }
 
@@ -169,8 +192,11 @@ div.construction {
         max-width: 50%;
     }
     .formHeading {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }  
+    h1 {
+        font-size: 1.75rem;
+    }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -178,7 +204,10 @@ div.construction {
         max-width: 40%;
     }
     .formHeading {
-        font-size: 1.6rem;
+        font-size: 2.3rem;
+    }
+    h1 {
+        font-size: 2.3rem;
     }
 }
 
@@ -187,7 +216,10 @@ div.construction {
         max-width: 30%;
     }
     .formHeading {
-        font-size: 1.8rem;
+        font-size: 2.4rem;
+    }
+    h1 {
+        font-size: 2.4rem;
     }
 }
 

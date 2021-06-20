@@ -1,46 +1,78 @@
- <div class="container outter shadow1 rounded-lg pt-4 mt-5 overflow-auto">
-    <div class="header p-4">
-        <h3 class="formHeading">Sign up for our monthly newsletter</h3>
+ 
+ <div class="container">
+     <div class="row"></div>
+        
+        <div class="col-sm-12">
+            <!-- Masthead Heading-->
+            <h1 class="formHeading" >Newsletter</h1>
+        </div> 
         <br>
-        <p>Check every month, a trip from one of our clients/friends!</p>
-    </div> 
-    <div class="containter-fluid body-form ">
-        <form class="form-horizontal" role = "form" 
-            action="/process?form=newsletterSignup" method = "POST">
-            <input type = "hidden" name = "_csrf" value="{{csrf}}">
-            {{!-- entering NAME as input --}}
-            <div class="form-group">
-                <label for="fieldName" class=" form-label">
-                    Name
-                </label>
-                <div class="col">
-                    <input type="text" class="form-control"
-                        id="fieldName" name="name" required
-                    >
+        {{!-- <div class="row"></div>  EXTRA SPACE--}}
+        
+         <div class="col-sm-12">
+            {{!-- box  --}}
+            <div class="container outter shadow1 rounded-lg pt-4 mt-5 overflow-auto">
+                <div class="header p-4" style="font-size: 1.1rem; font-weight:bold">
+                    <p>Choose also the frequency of newsletter.</p>
+                </div>
+
+                <div class="containter-fluid body-form ">
+                    <form class="form-horizontal" role = "form" 
+                        action="/process?form=newsletterSignup" method = "POST">
+                        <input type = "hidden" name = "_csrf" value="{{csrf}}">
+                        {{!-- entering NAME as input --}}
+                        <div class="form-group">
+                            <label for="fieldName" class=" form-label">
+                                Name
+                            </label>
+                            <div class="col">
+                                <input type="text" class="form-control"
+                                    id="fieldName" name="name" placeholder="Name" required
+                                >
+                            </div>
+                        </div>
+                        {{!-- entering EMAIL as input --}}
+                        <div class="form-group">
+                            <label for="fieldEmail" class="form-label" >
+                                Email
+                            </label>
+                            <div class="col">
+                                <input type="email" class="form-control" placeholder="name@example.com" required
+                                    id="fieldEmail" name="email"
+                                >
+                                <small id="emailHelp" class="form-text text-muted col-sm-12 col-md-12">
+                                    We'll never share your email with anyone else.
+                                </small>
+                            </div>
+                        </div>
+
+                         {{!-- entering FREQUENCY as input --}}
+                        <div class="form-group">
+                           <label style="padding: 1em;">
+                                <input type="radio" name="weekly"  required />
+                                 Weekly
+                            </label>
+                            <label style="padding: 1em;">
+                                <input type="radio" name="monthly"  required />
+                                 Monthly
+                            </label>
+                                   
+                        </div>
+
+
+                        {{!-- Submitting info --}}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2">
+                            <button type="submit" class="btn btn-secondary border border-light hvr-bounce-to-right ">
+                                Submit
+                            </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            {{!-- entering EMAIL as input --}}
-            <div class="form-group">
-                <label for="fieldEmail" class="form-label">
-                    Email
-                </label>
-                <div class="col">
-                    <input type="email" class="form-control" required
-                        id="fieldEmail" name="email"
-                    >
-                    <small id="emailHelp" class="form-text text-muted col-sm-12 col-md-12">
-                        We'll never share your email with anyone else.
-                    </small>
-                </div>
-            </div>
-            {{!-- Submitting info --}}
-            <div class="form-group">
-                <div class="col-sm-offset-2">
-                <button type="submit" class="btn btn-secondary border border-light hvr-bounce-to-right ">
-                    Submit
-                </button>
-                </div>
-            </div>
-        </form>
+            {{!-- END OF BOX --}}
+        </div>
     </div>
-</div>
+ </div>
+ 

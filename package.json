@@ -16,5 +16,10 @@
     "express-session": "^1.17.0",
     "formidable": "^1.2.2",
     "morgan": "^1.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lusalga/travelSite.git"
   }
+  
 }
