@@ -230,7 +230,7 @@ div.construction {
 
 @media only screen and (min-width: 1000px) {
     div.outter {
-        max-width: 40%;
+        max-width: 50%;
     }
     .formHeading {
         font-size: 2.3rem;
