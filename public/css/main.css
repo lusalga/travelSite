@@ -80,7 +80,7 @@ a.navbar-brand.newColor:hover {
 } */
 
 div.page-title {
-    width:100%;
+    width:67%;
 }
 
 .page-title {
@@ -136,6 +136,22 @@ h1{
     border: 3px solid #1a283e;
 }
 
+.button {
+
+        border: 2px solid rgb(153, 177, 232);
+        border-radius: 5px;
+        font-weight: bold;
+        /* padding: 0.2em; */
+        transition: 0.5s;    
+}
+
+.button:hover {
+
+    border: 2px solid rgb(85, 116, 189);
+    font-size:120% ;
+    border-radius: 5px;
+    font-weight: bold;
+}
 
 /* newsletter-signup styling */
 div.outter {
@@ -220,6 +236,13 @@ div.construction {
 
 
 /* resizing outer div of form with for many screens */
+@media only screen and (min-width: 500px) {
+
+    div.page-title {
+        width:65%;
+    }
+    
+}
 @media only screen and (min-width: 600px) {
     div.outter {
         max-width: 60%;
@@ -235,6 +258,12 @@ div.construction {
         /* margin-bottom: 3rem !important; */
     
     }
+    /* .page-title {
+        font-size: 90%;
+    } */
+    div.page-title {
+        /* width:75%; */
+    }
 }
 
 @media only screen and (min-width: 800px) {
@@ -247,8 +276,26 @@ div.construction {
     h1 {
         font-size: 1.75rem;
     }
+    div.page-title {
+        width:75%;
+    }
 }
 
+@media only screen and (min-width: 900px) {
+
+    div.page-title {
+        width:80%;
+    }
+    
+}
+
+@media only screen and (min-width: 970px) {
+
+    div.page-title {
+        width:70%;
+    }
+    
+}
 @media only screen and (min-width: 1000px) {
     div.outter {
         max-width: 50%;
@@ -259,6 +306,10 @@ div.construction {
     h1 {
         font-size: 2.3rem;
     }
+    div.page-title {
+        width:82%;
+    }
+    
 }
 
 @media only screen and (min-width: 1600px) {
@@ -270,6 +321,9 @@ div.construction {
     }
     h1 {
         font-size: 2.4rem;
+    }
+    div.page-title {
+        width:90%;
     }
 }
 

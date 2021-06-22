@@ -16,52 +16,54 @@ for the different views of the app --}}
     <link rel="stylesheet" href="/css/main.css" type="text/css">
     
     <title>The Local Spot</title>
+    {{!-- maps script --}}
+    <script type="text/javascript">
+    function initialize() {
+        var locations = [
+        ['Bonito', -21.123, -56.525, 4],
+        ['Zacatecas', 22.763, -102.623, 5],
+        ['O‘ahu', 21.483, -158.152, 3],
+        ['Santa Cruz De La Sierra', -17.779, -63.164, 2],
+        
+        ];
 
-<script type="text/javascript">
-  function initialize() {
-    var locations = [
-      ['Bonito', -21.123, -56.525, 4],
-      ['Zacatecas', 22.763, -102.623, 5],
-      ['O‘ahu', 21.483, -158.152, 3],
-      ['Santa Cruz De La Sierra', -17.779, -63.164, 2],
-      
-    ];
+        var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 2,
+        center: new google.maps.LatLng( -21.123, -56.525),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 2,
-      center: new google.maps.LatLng( -21.123, -56.525),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
+        var infowindow = new google.maps.InfoWindow();
 
-    var infowindow = new google.maps.InfoWindow();
+        var marker, i;
 
-    var marker, i;
+        for (i = 0; i < locations.length; i++) {  
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+        });
 
-    for (i = 0; i < locations.length; i++) {  
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
-
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+            }
+        })(marker, i));
         }
-      })(marker, i));
     }
-}
 
-function loadScript() {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCqQOKxiq0YY8lcWyjVcJBATXNtBrQRHww&' +
-      'callback=initialize';
-  document.body.appendChild(script);
-}
+    function loadScript() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCqQOKxiq0YY8lcWyjVcJBATXNtBrQRHww&' +
+        'callback=initialize';
+    document.body.appendChild(script);
+    }
 
-window.onload = loadScript;
-  </script>
+    window.onload = loadScript;
+    </script>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body class="text-center" id="page-top">
     {{!-- HEADER OF WEBSITE --}}
@@ -74,6 +76,12 @@ window.onload = loadScript;
                     <h3 class="name">THE LOCAL SPOT</h3>
                     
                 </div>
+                <div style="text-align:center;">
+                        <a href="/about" class="button" style="width:20px; color:#99b1e8 ; padding: .5rem 1rem; text-decoration: none;">
+                        Sign up</a>
+
+                </div>  
+
         
         </div>
       
