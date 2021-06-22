@@ -111,7 +111,7 @@ button.gsc-search-button-v2{
 
 /* STYLING MAIN CONTENT */
 div.main {
-    min-height: 80vh;
+    min-height: 60vh;
     color: #0a2f66;
 }
 h1{
@@ -120,8 +120,9 @@ h1{
 
 /* HOME STYLING */
 .imagem {
-    width: 55rem;
-    margin-bottom: 3rem !important;
+    width: 12rem;
+    /* margin-bottom: 3rem !important; */
+
 }
 .containerHome {
     width: 100%;
@@ -129,6 +130,10 @@ h1{
     padding-left: 1.5rem;
     margin-right: auto;
     margin-left: auto;
+}
+
+.homeBorderBox {
+    border: 3px solid #1a283e;
 }
 
 
@@ -152,8 +157,8 @@ div.outter {
 }
 
 div.construction {
-    border:2px red dotted;
-    margin: 20px;
+    border:2px #1a283e dotted;
+    /* margin: 20px; */
     padding: 20px 10px;
 }
 
@@ -203,6 +208,17 @@ div.construction {
     font-size: 1.5rem;
 } */
 
+
+/* ******** TRIP PAGE **********/
+/* Set the size of the div element that contains the map */
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+  }
+
+
 /* resizing outer div of form with for many screens */
 @media only screen and (min-width: 600px) {
     div.outter {
@@ -213,6 +229,11 @@ div.construction {
     }
     h1 {
         font-size: 1.7rem;
+    }
+    .imagem {
+        width: 25rem;
+        /* margin-bottom: 3rem !important; */
+    
     }
 }
 
@@ -230,7 +251,7 @@ div.construction {
 
 @media only screen and (min-width: 1000px) {
     div.outter {
-        max-width: 40%;
+        max-width: 50%;
     }
     .formHeading {
         font-size: 2.3rem;
