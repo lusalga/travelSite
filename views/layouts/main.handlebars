@@ -16,6 +16,52 @@ for the different views of the app --}}
     <link rel="stylesheet" href="/css/main.css" type="text/css">
     
     <title>The Local Spot</title>
+
+<script type="text/javascript">
+  function initialize() {
+    var locations = [
+      ['Bonito', -21.123, -56.525, 4],
+      ['Zacatecas', 22.763, -102.623, 5],
+      ['O‘ahu', 21.483, -158.152, 3],
+      ['Santa Cruz De La Sierra', -17.779, -63.164, 2],
+      
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 2,
+      center: new google.maps.LatLng( -21.123, -56.525),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+}
+
+function loadScript() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCqQOKxiq0YY8lcWyjVcJBATXNtBrQRHww&' +
+      'callback=initialize';
+  document.body.appendChild(script);
+}
+
+window.onload = loadScript;
+  </script>
 </head>
 <body class="text-center" id="page-top">
     {{!-- HEADER OF WEBSITE --}}
@@ -86,24 +132,7 @@ for the different views of the app --}}
     </header>
     {{!-- END OF HEADER --}}
 
-    <script>
-        // Initialize and add the map
-        function initMap() {
-            // The location of Uluru
-            const uluru = { lat: -25.344, lng: 131.036 };
-            // The map, centered at Uluru
-            const map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 4,
-                center: uluru,
-            });
-            // The marker, positioned at Uluru
-            const marker = new google.maps.Marker({
-                position: uluru,
-                map: map,
-            });
-        }
-    </script>
-
+    
     {{!-- body placeholder will be replaced with HTML for each view --}}
     <div class="main container">
         {{{body}}}    
@@ -127,6 +156,7 @@ for the different views of the app --}}
 <!-- Bootstrap core JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-
+{{!-- Google Maps --}}
+    {{!-- <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script> --}}
 </body>
 </html>
