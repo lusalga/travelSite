@@ -27,7 +27,7 @@
                             </label>
                             <div class="col">
                                 <input type="text" class="form-control"
-                                    id="fieldName" name="name"
+                                    id="fieldName" name="name" placeholder="Name" required
                                 >
                             </div>
                         </div>
@@ -35,11 +35,12 @@
                         <div class="form-group">
                             <label for="fieldEmail" class="form-label">Email</label>
                             <div class="col">
-                                <input type="email" class="form-control" required
-                                    id="fieldEmail" name="email"
+                                <input type="email" class="form-control" 
+                                    id="fieldEmail" name="email" placeholder="name@example.com" required
                                 >
                             </div>
                         </div>
+
                         {{!-- entering VACATION PHOTO --}}
                         <div class="form-group">
                             <label for="fieldPhoto" class="form-label">Vacation photo</label>
@@ -49,14 +50,16 @@
                                 >
                             </div>
                         </div>
+                        
                         {{!-- Submitting info --}}
                         <div class="form-group">
-                            <div class="col-sm-offset-2">
+                            <div class="col-sm-offset-2 center">
                             <button type="submit" class="btn btn-secondary border border-light hvr-bounce-to-right ">
                                 Submit
                             </button>
                             </div>
                         </div>
+                        
                     </form>
                 </div>
             </div>

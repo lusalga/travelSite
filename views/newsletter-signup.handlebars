@@ -13,9 +13,9 @@
          <div class="col-sm-12">
             {{!-- box  --}}
             <div class="container outter shadow1 rounded-lg pt-4 mt-5 overflow-auto">
-                <div class="header p-4" style="font-size: 1.1rem; font-weight:bold">
+                {{!-- <div class="header p-4" style="font-size: 1.1rem; font-weight:bold">
                     <p>Choose also the frequency of newsletter.</p>
-                </div>
+                </div> --}}
 
                 <div class="containter-fluid body-form ">
                     <form class="form-horizontal" role = "form" 
@@ -49,11 +49,15 @@
 
                          {{!-- entering FREQUENCY as input --}}
                         <div class="form-group">
-                           <label style="padding: 1em;">
-                                <input type="radio" name="weekly"  required />
+                           
+                               <p>Frequency of newsletter</p>
+                          
+                           <label style="padding-right:1rem;">
+                                
+                                <input type="radio" name="weekly"   required />
                                  Weekly
                             </label>
-                            <label style="padding: 1em;">
+                            <label style="padding-left: 1rem ;">
                                 <input type="radio" name="monthly"  required />
                                  Monthly
                             </label>
