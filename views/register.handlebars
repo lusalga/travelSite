@@ -1,13 +1,13 @@
-{{!-- form with NAME, EMAIL, FREQUENCY OF NEWLETTER --}}
 
  <div class="container">
      <div class="row"></div>
         
         <div class="col-sm-12">
             <!-- Masthead Heading-->
-            <h1 class="formHeading" >Newsletter</h1>
+            <h1 class="formHeading" >Register </h1>
+            <p>Join the Locals!</p>
         </div> 
-        <br>
+        
         {{!-- <div class="row"></div>  EXTRA SPACE--}}
         
          <div class="col-sm-12">
@@ -19,7 +19,7 @@
 
                 <div class="containter-fluid body-form ">
                     <form class="form-horizontal" role = "form" 
-                        action="/process?form=newsletterSignup" method = "POST">
+                        action="/processRegister?form=registerSignup" method = "POST">
                         <input type = "hidden" name = "_csrf" value="{{csrf}}">
                         {{!-- entering NAME as input --}}
                         <div class="form-group">
@@ -32,6 +32,7 @@
                                 >
                             </div>
                         </div>
+                        
                         {{!-- entering EMAIL as input --}}
                         <div class="form-group">
                             <label for="fieldEmail" class="form-label" >
@@ -41,50 +42,32 @@
                                 <input type="email" class="form-control" placeholder="name@example.com" required
                                     id="fieldEmail" name="email"
                                 >
-                                <small id="emailHelp" class="form-text text-muted col-sm-12 col-md-12">
-                                    We'll never share your email with anyone else.
-                                </small>
+                            </div>
+                        </div>
+                         {{!-- entering COUNTRY as input --}}
+                        <div class="form-group">
+                            <label for="fieldCountry" class=" form-label">
+                                Country
+                            </label>
+                            <div class="col">
+                                <input type="text" class="form-control"
+                                    id="fieldCountry" name="name" placeholder="Country you are at" required
+                                >
+                            </div>
+                        </div>
+                        {{!-- entering CITY as input --}}
+                        <div class="form-group">
+                            <label for="fieldCity" class=" form-label">
+                                City
+                            </label>
+                            <div class="col">
+                                <input type="text" class="form-control"
+                                    id="fieldCity" name="city" placeholder="City you live - not required" 
+                                >
                             </div>
                         </div>
 
-                         {{!-- entering FREQUENCY as input --}}
-                        <div class="form-group">
-                           
-                               <p>Frequency of newsletter</p>
-                          
-                           {{!-- <label style="padding-right:1rem;">
-                                
-                                <input type="radio" name="weekly"   required />
-                                 Weekly
-                            
-                                <input type="radio" name="monthly"  required />
-                                 Monthly
-                            </label> --}}
-                            <!-- Default radio -->
-                                <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="flexRadioDefault"
-                                    id="flexRadioDefault1"
-                                />
-                                <label class="form-check-label" for="flexRadioDefault1"> Weekly </label>
-                                </div>
-
-                                <!-- Default checked radio -->
-                                <div class="form-check">
-                                <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="flexRadioDefault"
-                                    id="flexRadioDefault2"
-                                    checked
-                                />
-                                <label class="form-check-label" for="flexRadioDefault2"> Monthly </label>
-                                </div>
-                                   
-                        </div>
-
+                        
 
                         {{!-- Submitting info --}}
                         <div class="form-group">
@@ -101,4 +84,3 @@
         </div>
     </div>
  </div>
- 
