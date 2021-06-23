@@ -80,11 +80,7 @@ for the different views of the app --}}
                         {{!-- <a href="/about" class="button" style="width:20px; color:#99b1e8 ; padding: .5rem 1rem; text-decoration: none;">
                         Sign up</a> --}}
                         <a href="/signin" class="btn btn-secondary btn-md border border-light hvr-bounce-to-right" role="button" aria-disabled="true">Sign in</a>
-
-
-                </div>  
-
-        
+                </div>    
         </div>
       
       <nav class="navbar navbar-expand-lg navbar-light sticky-top">
@@ -127,14 +123,26 @@ for the different views of the app --}}
         
                 {{!-- <script async src="https://cse.google.com/cse.js?cx=dd1914642283d76a6"></script>
                 <div id= "googleSearch" class="gcse-search"></div> --}}
-                <script async src="https://cse.google.com/cse.js?cx=f0ab4f4131463c6de"></script>
-                <div class="gcse-search"></div>
-                {{!-- <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Where you want to go..." aria-label="Search">
-                    <button class="btn  btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                </form> --}}
                 
-                
+                    
+                    <script async src="https://cse.google.com/cse.js?cx=f0ab4f4131463c6de"></script>
+                   {{!-- ADD PLACEHOLDER TO SEARCH --}}
+                   ​<script>
+                        (function() {
+                            var cx = 'f0ab4f4131463c6de';
+                            var gcse = document.createElement('script');
+                            gcse.type = 'text/javascript';
+                            gcse.async = true;
+                            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(gcse, s);
+                        })();
+                        window.onload = function(){
+                            document.getElementById('gsc-i-id1').placeholder = 'Search on Google now!';
+                        };
+                    </script>
+                    <div class="gcse-search"></div>
+                                
             </div>
         </nav>
         

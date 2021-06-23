@@ -73,6 +73,23 @@ app.get('/signin',(req,res) => {
     // console.log(now);
 });
 
+// take form from SIGN IN AND POST IT
+app.post('/processSignIn', (req,res) => {
+    console.log('Form (from querystring:) ' + req.query.form);
+    console.log('CSRF token (from hidden field:) ' + req.body._csrf);
+    console.log('Name (from visible field:) ' + req.body.name);
+    console.log('Email (from visible field:) ' + req.body.email);
+    console.log('Email (from visible field:) ' + req.body.country);
+    console.log('Email (from visible field:) ' + req.body.city);
+    res.redirect(303, 'sign-log'); // server redirects to path/url
+});
+
+app.get('/sign-log', (req,res, next) => {
+    res.render('home');
+   
+});
+
+
 app.get('/register',(req,res) => {
     // const now = new Date();
     res.render('register');
@@ -117,7 +134,6 @@ app.get('/contest/vacation-photo',(req,res) => {
     });
     // console.log(now);
 });
-
 
 app.post('/contest/vacation-photo/:year/:month', (req,res) =>{
     // using formidable to parse form data, creating new form
