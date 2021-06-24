@@ -138,23 +138,7 @@ div.homePhrases {
     padding: 1rem;
 }
 
-.getStartedButton {
 
-        /* border: 2px solid rgb(153, 177, 232) !important; */
-        /* border-radius: 5px; */
-        /* font-weight: bold;
-        padding: 0.2em;
-        transition: 0.5s;     */
-}
-
-.getStartedButton:hover {
-
-    /* border: 2px solid rgb(85, 116, 189) !important;
-    background-color: rgb(153, 177, 232) !important;
-    /* font-size:120% ; */
-    /* border-radius: 5px;
-    font-weight: bold; */ */
-}
 
 /* newsletter-signup styling */
 div.outter {
@@ -341,7 +325,7 @@ div.construction {
     margin-top: 5vh;
 }
 blockquote.fortuneCookie {
-    margin-top: 5vh;
+    /* margin-top: 1vh; */
     color: rgb(173, 109, 25);
     font-size: 1.4rem;
     font-weight: 600;
