@@ -1,7 +1,9 @@
 
-## Basic Travel website
+## Local Spot website
 
-In construction... 
+Prototype of product, where users receive recommendation of locals to travel and adventure where only spots that locals know and go! 
+No more going into turistics and crowded places! 
+Go where the Locals Go... 
 
 ## How to use
 
@@ -13,14 +15,12 @@ Open local host on browser.
 ### `Objective`
 
 Create a static application using Express.js (server) and Handlebars( Express-Handlebars view engine).
-The web page will be responsive. 
+The web page uses responsive web design and UX design principles. 
 
 ### `State we are at`
 
 Server is running locally.
-travelsite.js server has four routes, /home, /about, /404 and /500 routes. 
-travelsite.js now has two more views, /newsletter-signup, /contest/vacation-photo routes.
-Created views, a layout, a logo and a main application file.
+travelsite.js server has four routes: Home, About, Newsletter, Contest, Trips, 404 and 500 routes. 
 
 ### `Past steps`
 
@@ -40,9 +40,6 @@ Created views, a layout, a logo and a main application file.
 
 - Add favicon icon.
 
-
-### `Next steps`
-
 - Previous experiences page;
 
 - Home and About Us pages;
@@ -51,23 +48,22 @@ Created views, a layout, a logo and a main application file.
 
 - Fix newsletter form, size to be same as contest sign up;
 
-- 404 page needs new format.
 
-- 500 page needs new format.
+### `Next steps`
+
+- Deploy website on Github.
+
+- Add to Portfolio
 
 - Newsletter-signup route needs email to be linked to, as Mailchimp.
 
-- contest/vacation-photo route needs backend implementation (you can delete this route).
+- /thank-you view needs to be implemented. It needs to be working with sessions. 
 
-- /thank-you view needs to be implemented. It needs to be working with sessions (you can delete this route). 
-
-- /news-thank-you view needs to be working with sessions/cookies. Right now, if person sign up for newsletter, page does not change and info stays there. We might need to change cache (you can delete this route).
+- /news-thank-you view needs to be working with sessions/cookies. Right now, if person sign up for newsletter, page does not change and info stays there.
 
 - Database needs to be implemented, might use MongoDB.
 
 - Connect server and database sucessfully.
-
-- Deploy website on Github.
 
 To be defined later.
 
