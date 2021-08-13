@@ -67,10 +67,55 @@ app.get('/experiences', (req,res) => {
     res.render('experiences');
 });
 
+app.get('/signin',(req,res) => {
+    // const now = new Date();
+    res.render('signin');
+    // console.log(now);
+});
+
+// take form from SIGN IN AND POST IT
+app.post('/processSignIn', (req,res) => {
+    console.log('Form (from querystring:) ' + req.query.form);
+    console.log('CSRF token (from hidden field:) ' + req.body._csrf);
+    console.log('Name (from visible field:) ' + req.body.name);
+    console.log('Email (from visible field:) ' + req.body.email);
+    console.log('Email (from visible field:) ' + req.body.country);
+    console.log('Email (from visible field:) ' + req.body.city);
+    res.redirect(303, 'sign-log'); // server redirects to path/url
+});
+
+app.get('/sign-log', (req,res, next) => {
+    res.render('home');
+   
+});
+
+
+app.get('/register',(req,res) => {
+    // const now = new Date();
+    res.render('register');
+    // console.log(now);
+});
+// take form from REGISTER AND POST IT
+app.post('/processRegister', (req,res) => {
+    console.log('Form (from querystring:) ' + req.query.form);
+    console.log('CSRF token (from hidden field:) ' + req.body._csrf);
+    console.log('Name (from visible field:) ' + req.body.name);
+    console.log('Email (from visible field:) ' + req.body.email);
+    console.log('Email (from visible field:) ' + req.body.country);
+    console.log('Email (from visible field:) ' + req.body.city);
+    res.redirect(303, 'thank-you-register'); // server redirects to path/url
+});
+
+app.get('/thank-you-register', (req,res, next) => {
+    res.render('thank-you-register');
+   
+});
+
 app.get('/news-thank-you', (req,res, next) => {
     res.render('news-thank-you');
    
 });
+
 
 // handling POST request from FORM (action attribute path)(newsletter-signup view) to redirect to a 'thank-you' view
 app.post('/process', (req,res) => {

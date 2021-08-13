@@ -1,27 +1,28 @@
 
  <div class="container">
-    <div class="row"></div>
+     <div class="row"></div>
         
         <div class="col-sm-12">
             <!-- Masthead Heading-->
-            <h1 class="formHeading" >Photo Contest</h1>
+            <h1 class="formHeading" >Sign In</h1>
+            <p>Sign in into your account</p>
         </div> 
-        <br>
-        {{!-- <div class="row"></div>   EXTRA SPACE --}}
-
-        <div class="col-sm-12">
+        
+        {{!-- <div class="row"></div>  EXTRA SPACE--}}
+        
+         <div class="col-sm-12">
             {{!-- box  --}}
             <div class="container outter shadow1 rounded-lg pt-4 mt-5 overflow-auto">
-                <div class="header p-4" style="font-size: 1.1rem; font-weight:bold">
-                    <p>Submit a trip photo for a chance to win a trip do Hawaii! </p>
-                </div> 
+                {{!-- <div class="header p-4" style="font-size: 1.1rem; font-weight:bold">
+                    <p>Choose also the frequency of newsletter.</p>
+                </div> --}}
+
                 <div class="containter-fluid body-form ">
                     <form class="form-horizontal" role = "form" 
-                        enctype="multipart/form-data"
-                        action="/contest/vacation-photo/{year}/{month}" method = "POST"
-                    >
+                        action="/processSignIn?form=signIn" method = "POST">
+                        <input type = "hidden" name = "_csrf" value="{{csrf}}">
                         {{!-- entering NAME as input --}}
-                        <div class="form-group">
+                        {{!-- <div class="form-group">
                             <label for="fieldName" class=" form-label">
                                 Name
                             </label>
@@ -30,41 +31,47 @@
                                     id="fieldName" name="name" placeholder="Name" required
                                 >
                             </div>
-                        </div>
+                        </div> --}}
                         {{!-- entering EMAIL as input --}}
                         <div class="form-group">
-                            <label for="fieldEmail" class="form-label">Email</label>
+                            <label for="fieldEmail" class="form-label" >
+                                Email
+                            </label>
                             <div class="col">
-                                <input type="email" class="form-control" 
-                                    id="fieldEmail" name="email" placeholder="name@example.com" required
+                                <input type="email" class="form-control" placeholder="name@example.com" required
+                                    id="fieldEmail" name="email"
                                 >
+                                
+                            </div>
+                        </div>
+                        {{!-- entering PASSWORD as input --}}
+                        <div class="form-group">
+                            <label for="fieldEmail" class="form-label" >
+                                Password
+                            </label>
+                            <div class="col">
+                                <input type="password" class="form-control" placeholder="your password" required
+                                    id="fieldPassword" name="password"
+                                >
+                                <a href="/register" class="form-text text-muted col-sm-12 col-md-12">
+                                   Forgot Password?
+                                </a>
                             </div>
                         </div>
 
-                        {{!-- entering VACATION PHOTO --}}
-                        <div class="form-group">
-                            <label for="fieldPhoto" class="form-label">Vacation photo</label>
-                            <div class="col">
-                                <input type="file" class="form-control fileInput" required
-                                    accept="image/*" id="fieldPhoto" name="photo"
-                                >
-                            </div>
-                        </div>
-                        
+
                         {{!-- Submitting info --}}
                         <div class="form-group">
-                            <div class="col-sm-offset-2 center">
+                            <div class="col-sm-offset-2">
                             <button type="submit" class="btn btn-secondary border border-light hvr-bounce-to-right ">
-                                Submit
+                                Sign In
                             </button>
                             </div>
                         </div>
-                        
                     </form>
                 </div>
             </div>
             {{!-- END OF BOX --}}
         </div>
-
     </div>
-</div>
+ </div>

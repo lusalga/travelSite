@@ -25,10 +25,10 @@ body.dark-theme {
 
 .headerLogo {
     font-size:0.8em; 
-    /* position: sticky; better fixed position, used Bootstrap*/
     width:100%; 
     display:flex; 
     align-items:center;
+   
     /* background-color: #242526; */
     background: #141E30;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
@@ -37,9 +37,42 @@ body.dark-theme {
     /* box-shadow: inset -12px -8px 40px #464646; */
     
 }
+nav a, nav button, nav div {
+    position: sticky;
+    top:0;
+    z-index: 1;
+}
+
 nav.navbar {
     padding-top: 6.5rem;
+    /* position: relative; */
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.2rem;
+
 }
+.nav-item {
+    transition: 0.5s;
+}
+.nav-item:hover {
+    border: 2px solid rgb(153, 177, 232);
+    border-radius: 5px;
+    font-weight: bold;
+    /* padding: 0.2em; */
+}
+
+
+a.navbar-brand.newColor {
+    transition: 0.5s;
+}
+a.navbar-brand.newColor:hover {
+    border: 2px solid rgb(153, 177, 232);
+    border-radius: 5px;
+    /* padding: 0.2em; */
+    font-weight: bold;
+}
+
 
 /* .logo > img {
     height: 5rem;
@@ -47,7 +80,7 @@ nav.navbar {
 } */
 
 div.page-title {
-    width:100%;
+    width:67%;
 }
 
 .page-title {
@@ -78,14 +111,38 @@ button.gsc-search-button-v2{
 
 /* STYLING MAIN CONTENT */
 div.main {
-    min-height: 80vh;
+    min-height: 60vh;
     color: #0a2f66;
 }
+h1{
+    font-size: 1.8rem;
+}
+
+/* HOME STYLING */
+.imagem {
+    width: 12rem;
+    /* margin-bottom: 3rem !important; */
+
+}
+.containerHome {
+    width: 100%;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+div.homePhrases {
+    max-width: 75%;
+    border: 2px dotted rgb(85, 116, 189);
+    padding: 1rem;
+}
+
 
 
 /* newsletter-signup styling */
 div.outter {
-    max-width: 60%; /*size of outer div for form box*/
+    max-width: 85%; /*size of outer div for form box*/
     min-height: 10vh;
 }
 
@@ -103,8 +160,8 @@ div.outter {
 }
 
 div.construction {
-    border:2px red dotted;
-    margin: 20px;
+    border:2px #1a283e dotted;
+    /* margin: 20px; */
     padding: 20px 10px;
 }
 
@@ -150,17 +207,55 @@ div.construction {
     -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
     transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
   }
-.formHeading {
-    font-size: 1rem;
-}
+/* .formHeading {
+    font-size: 1.5rem;
+} */
+
+
+/* ******** TRIP PAGE **********/
+/* Set the size of the div element that contains the map */
+#map {
+    height: 400px;
+    /* The height is 400 pixels */
+    width: 100%;
+    /* The width is the width of the web page */
+  }
+
 
 /* resizing outer div of form with for many screens */
+@media only screen and (min-width: 500px) {
+
+    /* div.page-title {
+        width:65%;
+    } */
+    /* div.homePhrases {
+        max-width: 49%;
+    } */
+    
+}
 @media only screen and (min-width: 600px) {
     div.outter {
         max-width: 60%;
     }
     .formHeading {
-        font-size: 1.4rem;
+        font-size: 1.7rem;
+    }
+    h1 {
+        font-size: 1.7rem;
+    }
+    .imagem {
+        width: 25rem;
+        /* margin-bottom: 3rem !important; */
+    
+    }
+    /* .page-title {
+        font-size: 90%;
+    } */
+    div.page-title {
+        /* width:75%; */
+    }
+    div.homePhrases {
+        max-width: 59%;
     }
 }
 
@@ -169,25 +264,59 @@ div.construction {
         max-width: 50%;
     }
     .formHeading {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
     }  
+    h1 {
+        font-size: 1.75rem;
+    }
+    /* div.page-title {
+        width:75%;
+    } */
 }
 
+@media only screen and (min-width: 900px) {
+
+    /* div.page-title {
+        width:80%;
+    } */
+    
+}
+
+@media only screen and (min-width: 970px) {
+
+    div.page-title {
+        width:70%;
+    }
+    
+}
 @media only screen and (min-width: 1000px) {
     div.outter {
-        max-width: 40%;
+        max-width: 50%;
     }
     .formHeading {
-        font-size: 1.6rem;
+        font-size: 2.3rem;
     }
+    h1 {
+        font-size: 2.3rem;
+    }
+    div.page-title {
+        width:82%;
+    }
+    
 }
 
 @media only screen and (min-width: 1600px) {
     div.outter {
-        max-width: 30%;
+        max-width: 60%;
     }
     .formHeading {
-        font-size: 1.8rem;
+        font-size: 2.4rem;
+    }
+    h1 {
+        font-size: 2.4rem;
+    }
+    div.page-title {
+        width:90%;
     }
 }
 
@@ -196,7 +325,7 @@ div.construction {
     margin-top: 5vh;
 }
 blockquote.fortuneCookie {
-    margin-top: 5vh;
+    /* margin-top: 1vh; */
     color: rgb(173, 109, 25);
     font-size: 1.4rem;
     font-weight: 600;
@@ -241,3 +370,78 @@ footer  p {
     background-color: rgba(33, 37, 41, 0.5);
     line-height: 3.1rem;
   }
+
+/* MODALS IMPORTANT SET UP */
+.portfolio-item {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    max-width: 25rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+div.h-100 {
+    height: 100% !important;
+}
+div.w-100 {
+    width: 100% !important;
+}
+div.align-items-center {
+    align-items: center !important;
+}
+div.justify-content-center {
+    justify-content: center !important;
+}
+div.d-flex {
+    display: flex !important;
+}
+
+/*  POSITION OF ABOUT AND ICON TO CLICK ON MODAL */
+.portfolio-item-caption-content {
+    position: absolute;
+    transition: all 0.1s ease-in-out;
+    opacity: 0;
+    /* background-color: #360c23; */
+    width: 100%;
+
+}
+
+.portfolio-item-caption-content:hover {
+    opacity: 0.8;
+    font-weight: 900;
+    font-size:1.2rem;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.text-white {
+    color: #1d2f46 !important;
+}
+.text-center {
+    text-align: center!important;
+}
+
+.portfolio-item:hover {
+  opacity: 0.6;
+}
+
+/* MODAL OPEN STYLING */
+
+.space {
+    padding: 10px;
+}
+
+

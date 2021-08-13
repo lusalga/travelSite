@@ -16,73 +16,122 @@ for the different views of the app --}}
     <link rel="stylesheet" href="/css/main.css" type="text/css">
     
     <title>The Local Spot</title>
+    {{!-- maps script --}}
+    <script type="text/javascript">
+    function initMap() {
+        var locations = [
+        ['Bonito', -21.123, -56.525, 4],
+        ['Zacatecas', 22.763, -102.623, 5],
+        ['O‘ahu', 21.483, -158.152, 3],
+        ['Santa Cruz De La Sierra', -17.779, -63.164, 2],
+        
+        ];
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 2,
+        center: new google.maps.LatLng( -21.123, -56.525),
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {  
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+        });
+
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+            }
+        })(marker, i));
+        }
+    }
+
+    function loadScript() {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCqQOKxiq0YY8lcWyjVcJBATXNtBrQRHww&' +
+        'callback=initialize';
+    document.body.appendChild(script);
+    }
+
+    window.onload = loadScript;
+    </script>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body class="text-center" id="page-top">
     {{!-- HEADER OF WEBSITE --}}
-    <header>
+    <header style="border-bottom: 2px dotted #1e3148;">
         <div class="headerLogo fixed-top">
-            <div class = "logo">
-                <img src="/img/logo5.png" height="80" width="80" alt="The Spot logo">
-            </div>
-            <div class = "page-title"> 
-                <h3 class="name">THE LOCAL SPOT</h3>
-                
-            </div>
-            {{!-- <div>
-                <button class="btn-toggle">Toggle Dark Mode</button>
-            </div> --}}
+                <div class = "logo">
+                    <img src="/img/logo5.png" height="80" width="80" alt="The Spot logo">
+                </div>
+                <div class = "page-title"> 
+                    <h3 class="name">THE LOCAL SPOT</h3>
+                    
+                </div>
+                <div style="text-align:center;">
+                        {{!-- <a href="/about" class="button" style="width:20px; color:#99b1e8 ; padding: .5rem 1rem; text-decoration: none;">
+                        Sign up</a> --}}
+                        <a href="/signin" class="btn btn-secondary btn-md border border-light hvr-bounce-to-right" role="button" aria-disabled="true">Sign in</a>
+                </div>    
         </div>
-        {{!-- <hr> --}}
-        <nav class="navbar navbar-expand-lg navbar-light">
+      
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top">
             <a class="navbar-brand newColor" href="/home">Home</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link newColor" href="/about">About<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link newColor" href="/newsletter-signup">Newsletter</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link newColor" href="/contest/vacation-photo">Contest</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link newColor" href="/experiences">Trips</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link newColor dropdown-toggle" href="/home" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/home">Home</a>
-                    <a class="dropdown-item" href="/about">About</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/newsletter-signup">Newsletter</a>
-                    <a class="dropdown-item" href="/contest/vacation-photo">Contest</a>
-                    <a class="dropdown-item" href="/experiences">Trips</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled newColor" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
+                <ul class="navigation navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link newColor" href="about">About<span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link newColor" href="/newsletter-signup">Newsletter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link newColor" href="/contest/vacation-photo">Contest</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link newColor" href="/experiences">Trips</a>
+                    </li>
+                    
                 </ul>
-        
-                <script async src="https://cse.google.com/cse.js?cx=dd1914642283d76a6"></script>
-                <div id= "googleSearch" class="gcse-search"></div>
-                {{!-- <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Where you want to go..." aria-label="Search">
-                    <button class="btn  btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
-                </form> --}}
-                
+                  {{!--  PLACEHOLDER TO SEARCH, with dev typed placeholder  --}}
+                   <script async src="https://cse.google.com/cse.js?cx=f0ab4f4131463c6de"></script>
+                  
+                   ​<script>
+                        (function() {
+                            var cx = 'f0ab4f4131463c6de';
+                            var gcse = document.createElement('script');
+                            gcse.type = 'text/javascript';
+                            gcse.async = true;
+                            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(gcse, s);
+                        })();
+                        window.onload = function(){
+                            document.getElementById('gsc-i-id1').placeholder = 'Search on Google now!';
+                        };
+                    </script>
+                    <div class="gcse-search"></div>
+                                
             </div>
         </nav>
+        
+
     </header>
     {{!-- END OF HEADER --}}
 
+    
     {{!-- body placeholder will be replaced with HTML for each view --}}
     <div class="main container">
         {{{body}}}    
@@ -102,6 +151,11 @@ for the different views of the app --}}
     {{!-- Adding Bootstrap scripts to body --}}
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+{{!-- Google Maps --}}
+    <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
 </body>
 </html>
